@@ -5,7 +5,8 @@
 int main(int argc, char **argv){
     QApplication app(argc, argv);
      
-    QWidget *widget = new QWidget(NULL, Qt::Dialog | Qt::FramelessWindowHint);
+    QWidget *widget = new QWidget(NULL, Qt::Tool | Qt::FramelessWindowHint);
+    widget->setAttribute(Qt::WA_QuitOnClose);
     widget->resize(600, 400);
     widget->move(766, 0);
     widget->setWindowOpacity(0.7);
@@ -22,10 +23,9 @@ int main(int argc, char **argv){
     console->setGeometry(0, 0, 600, 400);
     console->setTerminalFont(font); 
     console->setColorScheme("GreenOnBlack");
+    console->sendText("cd ~/Desktop && clear\r");
     console->sendText("neofetch\r");
-
-    //QEvent *exitConsole = new QEvent(QEvent::Close);
-    
+ 
     QObject::connect(console, SIGNAL(finished()), widget, SLOT(close()));
     
 
