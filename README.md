@@ -2,6 +2,8 @@
 
 Simple terminal emulador.
 
+![Alt text](assets/example.png "Example Screenshot")
+
 This terminal emulator promps up in the screen with a small, borderless and iconless window, calling immediately the neofetch application.
 
 Still you can use it to call any bash command or installed package. The default working directory for this terminal is your home `~/`, it doesn't change if you call the application from another path.
